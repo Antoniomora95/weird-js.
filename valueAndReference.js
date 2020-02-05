@@ -13,7 +13,7 @@ console.log(b);
 //By reference (all objects, including functions)
 var c = {greeting: 'hi'};
 var d = c;
-d.greeting = 'hellso'; //this is MUTATE, yeah just that
+d.greeting = 'hello'; //this is MUTATE, yeah just that
 //mutate means change something, in this case an object
 console.log(c); 
 console.log(d); 
