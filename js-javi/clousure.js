@@ -1,4 +1,5 @@
 function first(x){  
+    debugger;
     // El parámetro x es una variable interna  
     // La función second utiliza x pero no como parámetro  
     // Tiene acceso a esta variable  
@@ -14,3 +15,27 @@ var suma1 = first(1);
 suma1(2);
 // 3  1 + 3 | Recibe ‘y’ dentro de second() y 
 //realiza la operación
+
+
+
+/*
+Un closure es un tipo especial de objeto que 
+combina dos cosas: una función, y el entorno 
+en que se creó esa función. El entorno está 
+formado por las variables locales que estaban 
+dentro del alcance en el momento que se creó 
+el closure. En este caso, miFunc es un closure 
+que incorpora tanto la función muestraNombre como 
+el string "Mozilla" que existían cuando se creó 
+el closure.
+ */
+function creaFunc() {
+    var nombre = "Mozilla";
+    function muestraNombre() {
+      alert(nombre);
+    }
+    return muestraNombre;
+  }
+  
+  var miFunc = creaFunc();
+  //miFunc(); 
