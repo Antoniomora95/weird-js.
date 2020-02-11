@@ -5,12 +5,12 @@ function checkAuth(cb) {
 };
 function getUser(authInfo, cb) {
     if (!authInfo.isAuth) {    
-        cb(null);5
-    return;  
-}
-setTimeout(function() {
-    cb({ name: “Javier” });
-}, 2000);
+        cb(null);
+        return;   
+    }
+    setTimeout(function() {
+        cb({ name: 'Javier' });
+    }, 2000);
 };
 checkAuth(function(authInfo) {
     getUser(authInfo, function(user) {

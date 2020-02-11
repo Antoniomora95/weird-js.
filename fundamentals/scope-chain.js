@@ -5,12 +5,13 @@
     or variable was created
  */
 function a() {
+    var myVar = 3;
     function b() {
 
         function c () {
+            debugger
             console.log(myVar);
         }
-        var myVar = 3;
         console.log(myVar);
         c();
     }

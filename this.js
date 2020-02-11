@@ -21,3 +21,5 @@ var c = {
     }
 };
 c.log();
+
+//a method inside of a method inside of an object

@@ -13,8 +13,8 @@ EXPRESSION ------> A unit of code that results in a value
  example if(e===4) if -----> is an statment, e===4 ----> 
  is an expression*/
 var a;
-greet();
-function greet() {
+greet(3);
+function greet(num) {
     console.log('hi statement');
 }
 var anonymousGreet = function () {
