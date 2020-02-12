@@ -1,23 +1,24 @@
+// here more info: https://coryrylan.com/blog/javascript-module-pattern-basics
 var carrito = (function() {
     // Privadas
-    var items = [];
+    var _items = [];
     function getItems() {
-        return items;
+        return _items;
     }
     // Público
     return {
         addItem: function(values) {
-            items.push(values);
+            _items.push(values);
         },
         allItems: getItems,
         getItemsCount: function(values) {
-            return items.length;
+            return _items.length;
         },
         getTotal: function(values) {
             var counter = this.getItemsCount();
             var total = 0;
             while (counter > 0) {
-                total += items[counter-1].price;
+                total += _items[counter-1].price;
                 counter--;
             }
             return total;
@@ -27,10 +28,10 @@ var carrito = (function() {
 carrito.addItem({  item: 'Pan',  price: 11.00});
 carrito.addItem({  item: 'Jamón',  price: 39.00});
 carrito.addItem({  item: 'Cermeza',  price: 30.00});
-// Output: 2
 console.log(carrito.getItemsCount(), 'count');
-// Output: 50
 console.log(carrito.allItems(), 'items');
 console.log(carrito.getTotal(), 'total');
+// esto es porque items no está expuesto como parte de la API pública
+console.log(carrito.items);
 // Output: undefined
 // esto es porque items no está expuesto como parte de la API públicaconsole.log(carrito.items);
