@@ -26,5 +26,5 @@ class Ingredientes1 {
         });
     }
 }
-var misIngredientes = new Ingredientes1(['queso', 'lechuga', 'jamon']);
+var misIngredientes = new Ingredientes1(['pan', 'leche', 'fruta']);
 misIngredientes.listar();
