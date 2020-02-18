@@ -7,7 +7,7 @@
  /*******We also have the event queue******/
  /*this starts when the execution stack is empty */
  function waitThreeSeconds () {
-     var ms = 5000 + new Date().getTime();
+     var ms = 3000 + new Date().getTime();
      while (new Date() < ms) {}
      console.log('finished function');
  } 
@@ -16,4 +16,4 @@
 }
 document.addEventListener('click', clickHandler);
 waitThreeSeconds();
-console.log('execution finished');
+console.log('execution finishe.');

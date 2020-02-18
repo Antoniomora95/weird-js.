@@ -3,10 +3,10 @@ function getUser() {
         setTimeout(function() {
             resolve({name: 'Javier' });
         }, 2000);
-    });
+    }); 
 };
 getUser().then(function(user) { 
-    console.log(user.name, 'sdsd');
+    console.log(user.name, 'sdsd', new Date().toString());
 }).catch((err) => console.log(err));
 
 
@@ -15,14 +15,16 @@ getUser().then(function(user) {
 function checkAuth() {
     return new Promise(function(resolve) {
         setTimeout(function() {
-            resolve({ isAuth: true });
+            resolve({ isAuth: false });
         }, 2000);
     });
 };
 function getUser2(authInfo) {
     return new Promise(function(resolve, reject) {
         if (!authInfo.isAuth) {
-            reject(null);
+            setTimeout(function(){
+                reject(new Error('Error in auth'+ new Date().toString()));
+            },1000);
         }
         setTimeout(function() {
             resolve({name: 'Javier z' });
@@ -34,7 +36,7 @@ checkAuth().then(function(authStatus) {
 }).then(function(user) {
     console.log(user.name);
 }).catch(function(error) {
-    // handle error  
+    console.log(error); 
 });
 
 // resolve a promise

@@ -27,7 +27,7 @@ var carrito = (function() {
 })();
 carrito.addItem({  item: 'Pan',  price: 11.00});
 carrito.addItem({  item: 'Jamón',  price: 39.00});
-carrito.addItem({  item: 'Cermeza',  price: 30.00});
+carrito.addItem({  item: 'Cerme',  price: 30.00});
 console.log(carrito.getItemsCount(), 'count');
 console.log(carrito.allItems(), 'items');
 console.log(carrito.getTotal(), 'total');
@@ -35,3 +35,7 @@ console.log(carrito.getTotal(), 'total');
 console.log(carrito.items);
 // Output: undefined
 // esto es porque items no está expuesto como parte de la API públicaconsole.log(carrito.items);
+
+
+
+
