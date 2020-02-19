@@ -1,0 +1,1 @@
+var greeting = 'What´s up';

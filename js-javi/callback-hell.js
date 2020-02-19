@@ -11,7 +11,7 @@ function getUser(authInfo, cb) {
     setTimeout(function() {
         cb({ name: 'Javier', id:10121});
     }, 2000);
-};
+}
 function searchTasks(user, callback) {
     if(user.id && user.id === 10111) {
         callback([

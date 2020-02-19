@@ -5,19 +5,28 @@
     or variable was created
  */
 function a() {
+    debugger
     var myVar = 3;
     function b() {
-
+        debugger
+        var mysecondVar = 'sds';
         function c () {
+            console.log(mysecondVar, myVar);
             debugger
-            console.log(myVar);
+            var third = true;
+            (function (){
+                var fourth = 9;
+                console.log(third, myVar, mysecondVar);
+                debugger
+                (function (){
+                    console.log(third, myVar, mysecondVar, fourth);
+                    debugger
+                }());
+            }());
         }
-        console.log(myVar);
         c();
     }
-
     b();
-    console.log(myVar);
 }
 a();
 var myVar  = 1;

@@ -7,6 +7,7 @@ function greet() {
     console.log('hi');
 }
 greet.languaje = 'english';
+console.log(greet, 'sdsd');
 //console.log(greet.languaje);
 /*Functions statements and functions expressions
 EXPRESSION ------> A unit of code that results in a value 

@@ -11,17 +11,14 @@ function Carro(options) {
 }
 // Constructor para definir nuevas camionetas
 function Camioneta(options) {
-    console.log(this, 'qwerr');
     this.state = options.state || 'Usado';
     this.color = options.color || 'Blanco';
     this.wheelSize = options.wheelSize || 'M';
 }
 // Definición de Esqueleto para VehiculosFactory
 function VehiculosFactory() {}
-// Default vehicleClass es Carro
-VehiculosFactory.prototype.vehicleClass = Carro;
-// Factory method para crear nuevas instancias de Vehiculos
-VehiculosFactory.prototype.createVehicle = function(options) {
+
+VehiculosFactory.createVehicle = function(options) {
     switch(options.vehicleType) {
         case ('carro') :
             this.vehicleClass = Carro;
@@ -35,10 +32,9 @@ VehiculosFactory.prototype.createVehicle = function(options) {
     // Crea instancia de nuestra Fábrica de Carros 
     var carFactory = new VehiculosFactory();
     console.log(carFactory);
-    console.log(Camioneta.prototype);
-    var carro = carFactory.createVehicle({  vehicleType: 'camioneta',  color: 'Verde',  doors: 2, state: '2020', wheelSize: '30 pl'});
-    
+    var camioneta = carFactory.createVehicle({  vehicleType: 'camioneta',  color: 'Verde',  doors: 2, state: '2020', wheelSize: '30 pl'});
+    console.log(camioneta);
     // Output: true
-console.log(carro instanceof Carro);
+//console.log(carro instanceof Carro);
 // Output: { color: “Verde”, doors: 2, state: “Nuevo” }
-console.log(carro)
+//console.log(carro)
