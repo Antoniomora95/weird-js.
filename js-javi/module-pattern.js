@@ -1,11 +1,11 @@
 // here more info: https://coryrylan.com/blog/javascript-module-pattern-basics
-var carrito = (function() {
-    // Privadas
+var cart = (function() {
+    // Private
     var _items = [];
     function getItems() {
         return _items;
     }
-    // Público
+    // Públic
     return {
         addItem: function(values) {
             _items.push(values);
@@ -25,16 +25,15 @@ var carrito = (function() {
         }
     };
 })();
-carrito.addItem({  item: 'Pan',  price: 11.00});
-carrito.addItem({  item: 'Jamón',  price: 39.00});
-carrito.addItem({  item: 'Cerme',  price: 30.00});
-console.log(carrito.getItemsCount(), 'count');
-console.log(carrito.allItems(), 'items');
-console.log(carrito.getTotal(), 'total');
-// esto es porque items no está expuesto como parte de la API pública
-console.log(carrito.items);
+cart.addItem({  item: 'Bread',  price: 11.00});
+cart.addItem({  item: 'Jam',  price: 39.00});
+cart.addItem({  item: 'Tomatoes',  price: 30.00});
+console.log(cart.getItemsCount(), 'count');
+console.log(cart.allItems(), 'items');
+console.log(cart.getTotal(), 'total');
+console.log(cart.items);
 // Output: undefined
-// esto es porque items no está expuesto como parte de la API públicaconsole.log(carrito.items);
+// this is because items is not exposed as part of the public API
 
 
 

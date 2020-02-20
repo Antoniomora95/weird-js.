@@ -1,40 +1,47 @@
-// Constructor para definir nuevos carros
+// Constructor to define new cars
 /*
 As prototype object is an object, we
 can attach properties and methods
 to the prototype object
 */
-function Carro(options) {
-    this.state = options.state || 'Nuevo';
-    this.color = options.color || 'Negro';
+function Car(options) {
+    this.state = options.state || 'New';
+    this.color = options.color || 'Black';
     this.doors = options.doors || 4;
 }
 // Constructor para definir nuevas camionetas
-function Camioneta(options) {
-    this.state = options.state || 'Usado';
-    this.color = options.color || 'Blanco';
-    this.wheelSize = options.wheelSize || 'M';
+function Truck(options) {
+    this.state = options.state || 'used';
+    this.color = options.color || 'white';
+    this.wheelSize = options.wheelSize || 'Medium';
+    console.log(this);
 }
-// Definición de Esqueleto para VehiculosFactory
-function VehiculosFactory() {}
-
-VehiculosFactory.createVehicle = function(options) {
+// Definition of the skeleton for VehiclesFactory
+function VehiclesFactory() {}
+// Default vehicleClass is car
+VehiclesFactory.prototype.vehicleClass = Car;
+// Factory method to create new vehicles instances
+VehiclesFactory.prototype.createVehicle = function(options) {
     switch(options.vehicleType) {
-        case ('carro') :
-            this.vehicleClass = Carro;
+        case ('car') :
+            this.vehicleClass = Car;
         break;
-        case ('camioneta') :
-            this.vehicleClass = Camioneta;
+        case ('truck') :
+            this.vehicleClass = Truck;
             break;
-        }
-        return new this.vehicleClass(options);
+    }
+    return new this.vehicleClass(options);
 };
-    // Crea instancia de nuestra Fábrica de Carros 
-    var carFactory = new VehiculosFactory();
-    console.log(carFactory);
-    var camioneta = carFactory.createVehicle({  vehicleType: 'camioneta',  color: 'Verde',  doors: 2, state: '2020', wheelSize: '30 pl'});
-    console.log(camioneta);
-    // Output: true
-//console.log(carro instanceof Carro);
-// Output: { color: “Verde”, doors: 2, state: “Nuevo” }
-//console.log(carro)
+// Create an instance of our cars factory
+var carFactory = new VehiclesFactory();
+var carro = carFactory.createVehicle(
+    {
+        vehicleType: 'truck',
+        color: 'Green',
+        doors: 2,
+        state: '2020',
+        wheelSize: '30 pl'
+    }
+);
+// Output: { color: “truck”, doors: 2, state: “2020”
+console.log(carro)

@@ -29,13 +29,24 @@ que incorpora tanto la función muestraNombre como
 el string "Mozilla" que existían cuando se creó 
 el closure.
  */
-function creaFunc() {
-    var nombre = "Mozilla";
-    function muestraNombre() {
-      alert(nombre);
+function returnFunction() {
+    var name = "Mozilla";
+    function showString() {
+      alert(name);
     }
-    return muestraNombre;
+    return showString;
   }
   
-  var miFunc = creaFunc();
-  //miFunc(); 
+  var returned = returnFunction();
+  returned(); 
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  Person.prototype.fullName = function() {
+    return this.name + 'is, ' + this.age + 'years old';
+  };
+  var person = new Person('Javier', 30);
+  // Get Properties
+  console.log(person.fullName());

@@ -2,7 +2,7 @@ function checkAuth(cb) {
     setTimeout(function() {
         cb({ isAuth: true });  
     }, 1000);
-};
+}
 function getUser(authInfo, cb) {
     if (!authInfo.isAuth) {    
         cb(null);
@@ -28,7 +28,7 @@ checkAuth(function(authInfo) {
     getUser(authInfo, function(user) {
         searchTasks(user, function(response, err){
             if(response){
-                console.table(response);
+                console.table(user.name);
             }
             if (err){
                 console.log(err.status, err.description);
