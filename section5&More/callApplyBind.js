@@ -49,3 +49,15 @@ var person2 = {
     lastname:'Salinas'
 };
 console.log(person.getFullName.apply(person2));
+
+
+//function currying
+/*Function currying: creating a copy of a function but
+with some preset parameters*/
+function multiply(a, b){
+    return a * b;
+}
+var multiplyByTwo = multiply.bind(this, 5);
+console.log(multiplyByTwo(2));
+var multiplyByThree = multiply.bind(this, 5);
+console.log(multiplyByThree(3));
