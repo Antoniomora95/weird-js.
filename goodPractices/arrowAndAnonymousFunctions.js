@@ -1,30 +1,29 @@
 // Sin Arrow Function
-class Ingredientes {
-    constructor(ingredientes) {
-        this.ingredientes = Array.isArray(ingredientes) ? ingredientes : [];
+class Ingredients {
+    constructor(ingredients) {
+        this.ingredients = Array.isArray(ingredients) ? ingredients : [];
     }
-    listar() {
-        this.ingredientes.forEach(function(ingrediente, i, ingredientes) {
-            debugger
-            console.log(ingrediente, i + '/' + ingredientes.length);
+    list() {
+        this.ingredients.forEach(function(ingredient, i, ingredients) {
+            console.log(ingredient, i + '/' + ingredients.length);
         });
     }
 }
-var misIngredientes = new Ingredientes(['queso', 'lechuga', 'jamon']);
-misIngredientes.listar();
+var ingredients = new Ingredients(['cheese', 'lettuce', 'jam']);
+ingredients.listar();
 
 
-// Con Arrow Function
-class Ingredientes1 {
-    constructor(ingredientes) {
-        this.ingredientes = Array.isArray(ingredientes) ? ingredientes : [];
+// With Arrow Function
+class IngredientsArrow {
+    constructor(ingredients) {
+        this.ingredients = Array.isArray(ingredients) ? ingredients : [];
     }
-    listar() {
-        this.ingredientes.forEach((ingrediente, i) => {
-            // ‘this’ si funcionará
-            console.log(ingrediente, i+1 + '/' + this.ingredientes.length);
+    list() {
+        this.ingredients.forEach((ingredient, i) => {
+            // ‘this’ will work
+            console.log(ingredient, i+1 + '/' + this.ingredients.length);
         });
     }
 }
-var misIngredientes = new Ingredientes1(['pan', 'leche', 'fruta']);
-misIngredientes.listar();
+var ingredientsArrow = new IngredientsArrow(['bread', 'milk', 'fruit']);
+ingredients.list();

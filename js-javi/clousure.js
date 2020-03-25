@@ -39,14 +39,3 @@ function returnFunction() {
   
   var returned = returnFunction();
   returned(); 
-
-  function Person(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-  Person.prototype.fullName = function() {
-    return this.name + 'is, ' + this.age + 'years old';
-  };
-  var person = new Person('Javier', 30);
-  // Get Properties
-  console.log(person.fullName());

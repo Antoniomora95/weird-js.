@@ -1,25 +1,28 @@
-class Pajaro {
-    constructor(edad, altura) {
-        this.edad = edad;
-        this.altura = altura;
+class Bird {
+    property = 'sd';
+    constructor(old, heigth) {
+        this.old = old;
+        this.heigth = heigth;
     }
-    caminar() {
-        console.log('Camina');
+    walk() {
+        console.log('walk');
     }
 }
-class Pinguino {
-    constructor(pajaro) {
+let b = new Bird();
+class Penguin {
+    constructor(bird) {
         debugger
-        this.pajaro = pajaro;
+        this.bird = bird;
     }
-    crecer() {
-        this.pajaro.edad++;
+    grow() {
+        this.bird.old++;
         console.log('one more day', this);
     }
-    nadar() {
-        console.log('Nada');
+    swim() {
+        console.log('nothing');
     }
-    }
-    let pajaro = new Pajaro(1, '2 metros');
-    let pinguino = new Pinguino(pajaro);
-    pinguino.crecer(); // Camina
+}
+let bird = new Bird(1, '2 meters');
+let penguin = new Penguin(bird);
+penguin.crecer(); // walk
+

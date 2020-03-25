@@ -3,7 +3,7 @@ context goes away?, in normal circumstances js clear it out
 with a process called garbage collection, in this case that
 does not happen, the nested function still has the access
 to the variables declared in its outer environment (outside)
-when we worked with scope chain already seen that, when
+when we worked with scope chain already saw that, when
 you put a function inside another the second one must have
 access to variables declared in the first one even the global
 execution context that is the normal effect, is not it?

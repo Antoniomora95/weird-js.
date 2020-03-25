@@ -1,55 +1,59 @@
-// ES6 Clase Básica
-class Pajaro {
-    constructor(nombre, peso, altura) {
-        this.nombre = nombre;
-        this.peso = peso;
-        this.altura = altura;
+// ES6 basic class
+class Bird {
+    constructor(name, weight, height) {
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
     }
-    caminar() {
+    walk() {
         console.log('Camina');
     }
 }
-class Pinguino extends Pajaro {
-    constructor(nombre, peso, altura, extra) {
-        super(nombre, peso, altura);
-        this.extra = extra; 
+// ES6 subclass
+class Penguin extends Bird {
+    constructor(name, weight, height, extra) {
+        super(name, weight, height);
+        this.extra = extra;
     }
-        nadar() {
-            console.log('Nada', this);
+    swim() {
+        console.log('nothing', this);
     }
 }
 // Objeto Pinguino
-let pinguino = new Pinguino('Alitas', '1kg', '13cm', 'else');
-pinguino.caminar(); // Camina
-pinguino.nadar(); // Nada
+let penguin = new Penguin('Alitas', '1kg', '13cm', 'else');
+penguin.walk(); // walk
+penguin.swim(); // swim
+
+
+
+
 
 
 
 
 // Javascript classical inheritance
-// Constructor para Pajaro
-function PajaroClassic(peso, altura) {
-    this.peso = peso;
-    this.altura = altura;
+// Builder for Bird
+function ClassicBird(weight, height) {
+    this.weight = weight;
+    this.height = height;
 }
-// Añade Método para prototipo Pajaro
-PajaroClassic.prototype.caminar = function() {
-    console.log('Camina');
+// Add Method for Bird prototype
+ClassicBird.prototype.walk = function () {
+    console.log('Walk');
 }
-// Constructor para Pinguino
-function PinguinoClassic(peso, altura) {
-    PajaroClassic.call(this, peso, altura);
+// Builder for Penguin
+function classicPenguin(weight, height) {
+    classicBird.call(this, weight, height);
 }
-// Herencia prototipada (Pingüino es un Pajaro)
-PinguinoClassic.prototype = Object.create(PajaroClassic.prototype);
-console.log(PinguinoClassic.prototype);
-PinguinoClassic.prototype.constructor = PinguinoClassic;
+// Prototyped inheritance (Penguin is a bird)
+classicPenguin.prototype = Object.create(classicBird.prototype);
+classicPenguin.prototype.constructor = classicPenguin;
 
-// Añade Método para prototipo Pinguino
-PinguinoClassic.prototype.nadar = function() {
-    console.log('Nada', );
+// Add Method for penguin prototype
+classicPenguin.prototype.swim = function () {
+    console.log('Nothing');
 }
-// Crear nuevo objeto Pinguino
-let pinguino1 = new PinguinoClassic('15kg', '2metros');
-pinguino1.caminar(); // Camina
-pinguino1.nadar(); // Nada
+// Create new Penguin object
+let penguin = new classicPenguin('15kg', '2 meters');
+penguin.walk(); // Walk
+penguin.swim(); // Nothing

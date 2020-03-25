@@ -46,42 +46,38 @@ function Observer() {
         //...
     };
 }
-// Extendemos el objeto con una extensión
+// We extend the object with an extention
 function extend(obj, extension) {
     for (var key in extension) {
         obj[key] = extension[key];
     }
 }
-
-// Referencias a los elementos del DOM
+// References to the DOM elements
 var controlCheckbox = document.getElementById('mainCheckbox');
 var addBtn = document.getElementById('addNewObserver');
 var container = document.getElementById('observersContainer');
 
-
-// Subject concreto// Extendemos el control del checkbox con la clase Subject
+// Concret subject, we extend the checkbox's control with the Subject class
 extend(controlCheckbox, new Subject());
-// Al hacer clic en el checkbox disparará una notificación a los Observers
+// When a click is fired the checkbox triggers a notification to the observers
 controlCheckbox.onclick = function() {
     controlCheckbox.notify(controlCheckbox.checked);
 };
 addBtn.onclick = addNewObserver;
-// Observer Concreto
+// Concrete observer
 function addNewObserver() {
-    // Crea un nuevo checkbox para añadir  
+    // Create a new checkbox to be added later 
     var check = document.createElement('input');
     check.type = 'checkbox';
-    // Extiende el checkbox con la clase Observer
+    // Extends the checkbox with the Observer class
     extend(check, new Observer());
-    console.log(new Observer(), new Subject());
-    // Sobrescribe el comportamiento de uptade
+    // Overwrite the behavior update
     check.update = function(value) {
         this.checked = value;
     };
-
-    /** Añade el nuevo observer a la lista de observers  para nuestro Subject principal. **/
+    /* Add the new observer to the observers list to our
+    principal Subject*/
     controlCheckbox.addObserver(check);
-
-    // Añade el item al contenedor
+    // Add the item in the container
     container.appendChild(check);
 }
