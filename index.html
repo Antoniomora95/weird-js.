@@ -8,11 +8,40 @@
 </head>
 <!--<script src="./excec-context.js"></script>-->
 <body>
-    <button id='addNewObserver'> Nuevo Observer </button>
-    <input id='mainCheckbox' type='checkbox' />
-    <div id='observersContainer'></div>
-    <button id="button">Click me</button>
+    <div id="main" class="container">
+        <h1>Users and grettings</h1>
+    </div>
+    <form id="formLog" action="" method="POST">
+        <label for="name"></label>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label for="lastname"></label>
+        <input type="text" name="lastname">
+        <br>
+        <br>
+        <label for="isFormal">Formal or Informal</label>
+        <select name="isFormal" id="">
+            <option value="true">Formal</option>
+            <option value="false">informal</option>
+        </select>
+        <br>
+        <br>
+        <label for="isFormal">Language</label>
+        <select name="isEnglish" id="">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <div id="loguedIn" class="container" style="display: none;">
+        <h1 style="width: 100%;">Logued in</h1>
+        <br>
+    </div>
 </body>
 </html>
-<script src='./section5&More/underscore.js'></script>
-<script src='./section5&More/useUnder.js'></script>
+<script src="./section5&More/jquery.js"></script>
+<script src="./ownFramework.js/Greeting.js"></script>
+<script src="./ownFramework.js/app.js"></script>
